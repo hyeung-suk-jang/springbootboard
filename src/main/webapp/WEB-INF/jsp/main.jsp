@@ -1,0 +1,1 @@
+<div>googleMap View</div>
