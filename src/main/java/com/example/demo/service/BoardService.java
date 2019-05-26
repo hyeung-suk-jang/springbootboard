@@ -24,4 +24,7 @@ public class BoardService {
 	public void saveArticle(BoardVO vo) {
 		boardmapper.saveArticle(vo);
 	}
+	public BoardVO getArticle(int idx) {
+		return boardmapper.getArticle(idx);
+	}
 }

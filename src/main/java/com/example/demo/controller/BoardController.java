@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -51,13 +52,25 @@ public class BoardController {
 	@RequestMapping(value="writeok", method=RequestMethod.POST)
 	public String writeok(HttpServletRequest request, BoardVO vo)
 	{
-		//writer, title, contents
-		String writer = request.getParameter("writer");
-		String title =  request.getParameter("title");
-		String contents = request.getParameter("contents");
-		System.out.println(writer+","+title+","+contents);
 		//저장.
 		boardservice.saveArticle(vo);
-		return "board/list";
+		return "redirect:list";
 	}
+	/*
+	@RequestMapping(value="detail/{idx}",method={ RequestMethod.GET, RequestMethod.POST  })
+	public String detail(@PathVariable int idx,Model model)
+	{
+		BoardVO vo = boardservice.getArticle(idx);
+		model.addAttribute("board",vo);
+		return "board/detail";
+	}
+	*/
+	@RequestMapping(value="detail",method={ RequestMethod.GET, RequestMethod.POST  })
+	public String detail(int idx,Model model)
+	{
+		BoardVO vo = boardservice.getArticle(idx);
+		model.addAttribute("board",vo);
+		return "board/detail";
+	}
+	
 }

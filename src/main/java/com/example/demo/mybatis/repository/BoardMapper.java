@@ -10,4 +10,5 @@ import com.example.demo.mybatis.model.BoardVO;
 public interface BoardMapper {
 	List<BoardVO> selectAllBoard();
 	void saveArticle(BoardVO vo);
+	BoardVO getArticle(int idx);
 }
