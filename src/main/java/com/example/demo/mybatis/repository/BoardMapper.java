@@ -9,4 +9,5 @@ import com.example.demo.mybatis.model.BoardVO;
 @Mapper
 public interface BoardMapper {
 	List<BoardVO> selectAllBoard();
+	void saveArticle(BoardVO vo);
 }

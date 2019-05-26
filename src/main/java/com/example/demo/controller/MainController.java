@@ -10,7 +10,7 @@ public class MainController {
 	
 	@RequestMapping(value ={  "/", "/main", "/home", "/index"}, method = RequestMethod.GET)
 	public String index(Model model) {
-		model.addAttribute("name", "SpringBlog from Millky");
+		model.addAttribute("name", "장형석");
 		System.out.println("main controller!!!");
 		return "index";
 	}

@@ -27,6 +27,7 @@
 		</c:forEach>
 		<a href="stat?format=xls">엑셀 다운로드</a>
 	</table>
+	<a href="/board/write">글쓰기</a>
 	
 
 </body>

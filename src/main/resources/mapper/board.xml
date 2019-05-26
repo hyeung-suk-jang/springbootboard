@@ -10,4 +10,8 @@
           FROM
           EXCELBOARD
     </select>
+    <insert id="saveArticle" parameterType="board">
+    	INSERT INTO EXCELBOARD(title, contents, writer, regDate, attachFile)
+    	VALUES(#{title}, #{contents}, #{writer},now(), #{attachFile})
+    </insert>
 </mapper>
