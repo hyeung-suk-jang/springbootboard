@@ -14,6 +14,7 @@ public class BoardVO {
 	String writer;
 	String regDate;
 	String attachFile;
+
 	public String getBoardidx() {
 		return boardidx;
 	}
@@ -50,5 +51,5 @@ public class BoardVO {
 	public void setAttachFile(String attachFile) {
 		this.attachFile = attachFile;
 	}
-	
+
 }

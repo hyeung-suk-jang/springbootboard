@@ -19,7 +19,7 @@
 		<c:forEach items="${resultList}" var="list">
 		<tr>
 			<td>${list.boardidx}</td>
-			<td><a href="detail?idx=${list.boardidx}">${list.title }</a></td>
+			<td><a href="detail?idx=${list.boardidx}">${list.title}</a></td>
 			<td>${list.writer }</td>
 			<td>${list.regDate }</td>
 			<td>${list.attachFile }</td>

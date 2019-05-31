@@ -41,7 +41,6 @@
 			
 			f1.submit();
 		})
-		
 	});
 </script>
 </body>

@@ -13,17 +13,19 @@ import com.example.demo.mybatis.repository.BoardMapper;
 @Service
 @Transactional
 public class BoardService {
-	@Autowired
-	BoardMapper boardmapper;
+
+    @Autowired
+    public BoardMapper boardmapper;
 	
 	
 	public List<BoardVO> list() {
-		
 		return boardmapper.selectAllBoard();
 	}
+
 	public void saveArticle(BoardVO vo) {
 		boardmapper.saveArticle(vo);
 	}
+
 	public BoardVO getArticle(int idx) {
 		return boardmapper.getArticle(idx);
 	}
