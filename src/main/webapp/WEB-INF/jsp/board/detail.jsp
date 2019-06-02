@@ -13,10 +13,10 @@
 	<input type="hidden" value="${board.boardidx}" id="boardidx">
 	글쓴이<input type="text" name="writer" id="writer" value="${board.writer}"><br>
 	제목 <input type="text" name="title" id="title" value="${board.title }"><br>
-	본문<textarea name="contents" cols="50" rows="10" id="contents">${board.contents }</textarea>
+	본문<textarea name="contents" cols="50" rows="10" id="contents"> <c:out value="${board.contents}"/> </textarea>
 	<br>
 </form>
-<a href="<c:url value='board/edit?idx='/>${board.boardidx}">수정</a>
+<a href="<c:url value='/board/edit?idx='/>${board.boardidx}">수정</a>
 <a href="<c:url value='/board/delete?idx='/>${board.boardidx}">삭제</a>
 <script
 		src="https://code.jquery.com/jquery-3.4.1.js"

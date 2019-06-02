@@ -13,4 +13,6 @@ public interface BoardMapper {
 	List<BoardVO> selectAllBoard();
 	void saveArticle(BoardVO vo);
 	BoardVO getArticle(int idx);
+	void deleteArticle(int idx);
+	void updateArticle(BoardVO vo);
 }

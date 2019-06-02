@@ -17,7 +17,6 @@ public class BoardService {
     @Autowired
     public BoardMapper boardmapper;
 	
-	
 	public List<BoardVO> list() {
 		return boardmapper.selectAllBoard();
 	}
@@ -29,4 +28,11 @@ public class BoardService {
 	public BoardVO getArticle(int idx) {
 		return boardmapper.getArticle(idx);
 	}
+
+	public void delete(int idx) { boardmapper.deleteArticle(idx); }
+
+	public void updateArticle(BoardVO vo) {
+		boardmapper.updateArticle(vo);
+	}
+
 }

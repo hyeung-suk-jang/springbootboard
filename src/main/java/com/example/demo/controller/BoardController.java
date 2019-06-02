@@ -52,7 +52,7 @@ public class BoardController {
 	@RequestMapping(value="writeok", method=RequestMethod.POST)
 	public String writeok(HttpServletRequest request, BoardVO vo) {
 		boardservice.saveArticle(vo);
-		return "redirect:list";
+		return "redirect:/board/list";
 	}
 
 	@RequestMapping(value="detail",method={ RequestMethod.GET, RequestMethod.POST  })
@@ -69,9 +69,16 @@ public class BoardController {
 		return "board/edit";
 	}
 
-	@RequestMapping(value ="delte", method={ RequestMethod.GET, RequestMethod.POST  } )
+	@RequestMapping(value="editok", method=RequestMethod.POST)
+	public String editok(HttpServletRequest request, BoardVO vo) {
+		boardservice.updateArticle(vo);
+		return "redirect:/board/list";
+	}
+
+	@RequestMapping(value ="delete", method={ RequestMethod.GET, RequestMethod.POST  } )
 	public String delete(String idx, Model model) {
 		LOGGER.info("delete");
+		boardservice.delete(Integer.valueOf(idx));
 		return "redirect:/board/list";
 	}
 

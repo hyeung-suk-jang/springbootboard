@@ -17,4 +17,16 @@
     <select id="getArticle" parameterType="int" resultType="board">
     	SELECT * FROM EXCELBOARD WHERE boardidx = #{idx} 
     </select>
+
+	<delete id="deleteArticle" parameterType="int">
+		DELETE FROM EXCELBOARD
+		WHERE boardidx = #{idx}
+	</delete>
+
+	<update id="updateArticle" parameterType="board">
+		UPDATE EXCELBOARD
+		SET title=#{title}, contents=#{contents}, writer=#{writer}
+		WHERE boardidx = #{boardidx}
+	</update>
+
 </mapper>

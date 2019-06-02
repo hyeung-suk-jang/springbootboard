@@ -8,11 +8,11 @@
 </head>
 <body>
 여기는 글쓰기 페이지 입니다.
-<form name="f1" id="f1" action="/board/writeok" method="post" accept-charset="utf-8">
-    <input type="hidden" id="boardidx" value="${board.boardidx}"/>
+<form name="f1" id="f1" action="/board/editok" method="post" accept-charset="utf-8">
+    <input type="hidden" name="boardidx" id="boardidx" value="${board.boardidx}"/>
     글쓴이<input type="text" name="writer" id="writer" value="${board.writer}"><br>
     제목 <input type="text" name="title" id="title" value="${board.title}"><br>
-    본문<textarea name="contents" cols="50" rows="10" id="contents" value="${board.contents}"></textarea>
+    본문<textarea name="contents" cols="50" rows="10" id="contents">${board.contents}</textarea>
     <br>
     <input type="submit" value="전송" id="btnsubmit">
 </form>
